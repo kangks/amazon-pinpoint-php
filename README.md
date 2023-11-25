@@ -17,7 +17,7 @@ cd amazon-pinpoint-php
 
 2. Add your AWS credentials:
 
-Place your AWS credentials in the `aws_credentials`` folder.
+Place your AWS credentials in the `aws_credentials` folder.
 
 3. Build and run the Docker containers:
 
@@ -30,15 +30,17 @@ This command will start the PHP application and an Amazon Pinpoint simulator.
 
 4. Access the application:
 
-Open your browser and go to `http://localhost:80/pinpointclient.php` or `http://localhost:80/pinpointemailclient.php``. You should see a simple interface to send emails.
+Open your browser and go to `http://localhost:80/pinpointclient.php` or `http://localhost:80/pinpointemailclient.php`. You should see a simple interface to send emails.
 
 
 ## Usage
 The application provides a form to send emails. Choose the email sending method:
 
 Simple Body: Enter the recipient email, sender email, select "Simple", click "Send Email" to send a basic email.
-Template ARN: Enter the recipient email, sender email, select "Template", click "Send Email" to send an email using a template.
+Template: Enter the recipient email, sender email, select "Template", click "Send Email" to send an email using a template.
 
+###
+In `pinpointclient.php`, I included an example of setting friendly name for the sender, in the format of `Friendly name <email address>`.
 
 ## Configuration
 You can modify the configuration in the `config/pinpointclient-config.php` or `config/pinpointemailclient-config.php`. Update the Amazon Pinpoint settings, such as the region, as needed.

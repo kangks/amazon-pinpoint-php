@@ -7,9 +7,10 @@ return (
             'version'  => '2018-07-26',    
         ],
         'default' => [
-            'sender' => '<sender>',
-            'recipients' => '<recipient>',
-            'templateArn' => 'arn:aws:mobiletargeting:us-east-1:<AWS Account ID>:templates/<template name>/EMAIL'
+            'senderFriendlyName' => '<friendly sender name>',
+            'senderAddress' => '<sender email adddress>',
+            'recipients' => '<recipient email address>',
+            'templateArn' => 'arn:aws:mobiletargeting:us-east-1:<AWS Account ID>:templates/<template name>/EMAIL',
         ]
     ));    
 ?>

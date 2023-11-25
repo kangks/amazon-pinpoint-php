@@ -17,7 +17,8 @@ echo('<pre>' . print_r($accountResult, true) . '</pre>');
 
 <?php
 # The "From" address. This address has to be verified in Amazon Pinpoint in the region you're using to send email.
-$SENDER = $configurations['default']['sender'];
+$SENDER = $configurations['default']['senderAddress'];
+$SENDERALIAS = $configurations['default']['senderFriendlyName'];
 
 # The addresses on the "To" line. If your Amazon Pinpoint account is in the sandbox, these addresses also have to be verified.
 $TOADDRESS = $configurations['default']['recipients'];
@@ -28,12 +29,16 @@ $TEMPLATEARN = $configurations['default']['templateArn'];
 
 <form method="post"> 
 
-From: <input type="text" name="SENDER" value="<?php echo $SENDER;?>">
+<br/>
+From: <input type="text" name="SENDER" value="<?php echo $SENDER;?>"> (Friendly name: <input type="text" name="SENDERALIAS" value="<?php echo $SENDERALIAS;?>">)
+<br/>
 To: <input type="text" name="TOADDRESS" value="<?php echo $TOADDRESS;?>">
 
+<br/>
 <input type="radio" name="content" value="simple">Simple
 <input type="radio" name="content" value="template">Template
 
+<br/>
 <input type="submit" name="send" value="Send Email"/> 
 </form> 
 
@@ -48,6 +53,7 @@ if(isset($_POST['send'])) {
     $selected_content = $_POST['content'];
 
     $SENDER = $_POST['SENDER'];
+    $SENDERALIAS = $_POST['SENDERALIAS'];
     $TOADDRESS = $_POST['TOADDRESS'];
 
     $content = '';
@@ -86,7 +92,7 @@ if(isset($_POST['send'])) {
             'Destination' => [
                 'ToAddresses' => [$TOADDRESS],
             ],
-            'FromEmailAddress' => $SENDER
+            'FromEmailAddress' => "$SENDERALIAS <$SENDER>"
         ]);    
         echo('<pre>' . print_r($result, true) . '</pre>');
     

@@ -7,11 +7,12 @@ return (
             'version'  => '2016-12-01',    
         ],
         'default' => [
-            'applicationId' => '<Pinpoint Application ID',
-            'sender' => '<Sender>',
-            'recipients' => '<Recipient>',
-            'templateName' => '<Template name>',
-            'templateVersion' => '<Template version>'
+            'applicationId' => '<application Id>',
+            'senderFriendlyName' => '<sender friendly name>',
+            'senderAddress' => '<sender email address>',
+            'recipients' => '<recipient email address>',
+            'templateName' => '<template name>',
+            'templateVersion' => '<template version>'
         ]
     ));    
 ?>
