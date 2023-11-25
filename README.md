@@ -30,7 +30,7 @@ This command will start the PHP application and an Amazon Pinpoint simulator.
 
 4. Access the application:
 
-Open your browser and go to `http://localhost:80``. You should see a simple interface to send emails.
+Open your browser and go to `http://localhost:80/pinpointclient.php` or `http://localhost:80/pinpointemailclient.php``. You should see a simple interface to send emails.
 
 
 ## Usage
@@ -41,19 +41,7 @@ Template ARN: Enter the recipient email, sender email, select "Template", click 
 
 
 ## Configuration
-You can modify the configuration in the `config/config.php` file. Update the Amazon Pinpoint settings, such as the region, as needed.
-
-```
-<?php
-
-return (array(
-        'profile' => 'pinpoint', // your AWS profile
-        'region'  => 'us-east-1',
-        'version'  => '2018-07-26',
-    ));    
-
-?>
-```
+You can modify the configuration in the `config/pinpointclient-config.php` or `config/pinpointemailclient-config.php`. Update the Amazon Pinpoint settings, such as the region, as needed.
 
 ## Contributing
 Feel free to contribute to this project by submitting issues or pull requests.
