@@ -45,7 +45,7 @@ To: <input type="text" name="TOADDRESS" value="<?php echo $TOADDRESS;?>">
 <br/>
 
 <?php
-// https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-pinpoint-email-2018-07-26.html#sendemail
+// https://docs.aws.amazon.com/aws-sdk-php/v3/api/api-pinpoint-2016-12-01.html#sendmessages
 
 if(isset($_POST['send'])) { 
 
